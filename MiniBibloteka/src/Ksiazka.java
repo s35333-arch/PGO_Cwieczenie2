@@ -1,8 +1,8 @@
 public class Ksiazka{
-    private String tytul;
+    String tytul;
     private String autor;
     private int liczbaStron;
-    private boolean dostepna;
+    public boolean dostepna;
 
     public Ksiazka(String tytul, String autor, int liczbaStron, boolean dostepna){
         this.tytul = tytul;
@@ -16,11 +16,19 @@ public class Ksiazka{
 
     public void wypozycz() {
         if (dostepna) {
-            dostepna = true;
+            dostepna = false;
             System.out.println("dostępna.");
         } else {
             System.out.println("Przepraszamy, ta książka jest już wypożyczona.");
         }
+    }
+
+    public void zwroc() {
+        if(dostepna){
+            dostepna = true;
+            System.out.println("Ksiązka zwrócona: " + tytul);
+        }else
+            System.out.println("Książka nie zwrócona: " +tytul);
     }
 
 }
